@@ -1,15 +1,28 @@
-const tripType = document.getElementById("tripType");
-const dropoff = document.getElementById("dropoffWrapper");
-const hourly = document.getElementById("hourlyWrapper");
+document.addEventListener("DOMContentLoaded", () => {
+  const tripType = document.getElementById("tripType");
+  const dropoffWrapper = document.getElementById("dropoffWrapper");
+  const hourlyWrapper = document.getElementById("hourlyWrapper");
+  const dropoffInput = document.getElementById("dropoff");
+  const hoursInput = document.getElementById("hours");
 
-hourly.style.display = "none";
+  function updateTripFields() {
+    const val = tripType.value;
 
-tripType.addEventListener("change", () => {
-  if (tripType.value === "Hourly") {
-    hourly.style.display = "block";
-    dropoff.style.display = "none";
-  } else {
-    hourly.style.display = "none";
-    dropoff.style.display = "block";
+    if (val === "Hourly") {
+      hourlyWrapper.classList.remove("hidden");
+      dropoffWrapper.classList.add("hidden");
+
+      if (dropoffInput) dropoffInput.required = false;
+      if (hoursInput) hoursInput.required = true;
+    } else {
+      hourlyWrapper.classList.add("hidden");
+      dropoffWrapper.classList.remove("hidden");
+
+      if (dropoffInput) dropoffInput.required = true;
+      if (hoursInput) hoursInput.required = false;
+    }
   }
+
+  tripType.addEventListener("change", updateTripFields);
+  updateTripFields(); // run once on load
 });
