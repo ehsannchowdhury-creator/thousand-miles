@@ -1,236 +1,137 @@
-/* =======================
-   RESET
-======================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, Helvetica, sans-serif; background: #f6f3ec; color: #111; }
-a { text-decoration: none; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
 
-/* =======================
-   NOTICE BAR
-======================= */
-.notice{
+body {
+  background: #f6f3ec;
+  color: #111;
+}
+
+/* NOTICE */
+.notice {
   background: #f5e9c6;
   text-align: center;
-  padding: 8px 10px;
+  padding: 8px;
   font-size: 14px;
 }
 
-/* =======================
-   NAVBAR
-======================= */
-.navbar{
+/* NAVBAR */
+.navbar {
   background: #000;
   color: #fff;
-}
-
-.nav-wrap{
-  width: min(1200px, 92%);
-  margin: 0 auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 14px 0;
+  padding: 20px 40px;
 }
 
-.brand-title{
-  font-weight: 900;
-  letter-spacing: .4px;
+.logo span {
   font-size: 20px;
+  font-weight: bold;
 }
 
-.brand-sub{
+.logo small {
+  display: block;
   font-size: 12px;
   color: #c9a44c;
-  margin-top: 2px;
 }
 
-.nav-links{
-  display: flex;
-  gap: 18px;
-  flex-wrap: wrap;
-}
-
-.nav-links a{
+nav a {
   color: #fff;
-  font-size: 14px;
-  opacity: .9;
+  margin: 0 12px;
+  text-decoration: none;
 }
 
-.nav-links a:hover{ opacity: 1; }
-.nav-links a.active{ opacity: 1; }
-
-.cta{
+.cta {
   border: 1px solid #c9a44c;
+  padding: 8px 16px;
   color: #c9a44c;
-  padding: 9px 14px;
-  border-radius: 3px;
-  white-space: nowrap;
+  text-decoration: none;
 }
 
-.cta:hover{
-  background: rgba(201,164,76,.12);
-}
-
-/* =======================
-   HERO (THE PHOTO LAYOUT)
-   LEFT = wide glass form
-   RIGHT = text
-======================= */
-.hero{
+/* HERO */
+.hero {
   position: relative;
-  min-height: 88vh;
-  background: url("assets/hero-background.png") center/cover no-repeat;
-  display: flex;
-  align-items: center;
+  height: 90vh;
+  background: url("https://images.unsplash.com/photo-1617814071447-4f0c6b6b4f58")
+    center/cover no-repeat;
 }
 
-.hero-overlay{
+.overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,.25); /* light overlay like your photo */
+  background: rgba(0, 0, 0, 0.65);
 }
 
-.hero-wrap{
+.hero-content {
   position: relative;
-  z-index: 2;
-  width: min(1200px, 92%);
-  margin: 0 auto;
   display: flex;
-  align-items: center;
-  gap: 50px;
-  padding: 55px 0;
-}
-
-/* =======================
-   LEFT FORM PANEL (GLASSY)
-======================= */
-.form-panel{
-  width: 520px;                 /* wide like your photo */
-  padding: 18px;
-  border-radius: 6px;
-  background: rgba(0,0,0,.25);  /* dark glass panel */
-  backdrop-filter: blur(2px);
-}
-
-/* Inputs like your screenshot */
-.form-panel input,
-.form-panel select,
-.form-panel textarea{
-  width: 100%;
-  height: 42px;
-  padding: 10px 12px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid rgba(255,255,255,.20);
-  background: rgba(255,255,255,.92);
-  font-size: 13px;
-  outline: none;
-}
-
-/* textarea bigger */
-.form-panel textarea{
-  height: 78px;
-  resize: vertical;
-}
-
-/* button like your photo: black button + gold text */
-.form-panel button{
-  width: 100%;
-  height: 44px;
-  border: none;
-  border-radius: 4px;
-  background: #000;
-  color: #c9a44c;
-  font-weight: 800;
-  cursor: pointer;
-  margin-top: 4px;
-}
-
-.form-panel button:hover{
-  filter: brightness(1.05);
-}
-
-.hidden{ display: none; }
-
-/* =======================
-   RIGHT HERO TEXT
-======================= */
-.hero-text{
-  max-width: 620px;
+  gap: 40px;
+  padding: 80px;
   color: #fff;
-  text-shadow: 0 10px 24px rgba(0,0,0,.40);
 }
 
-.hero-text h1{
-  font-size: 44px;
-  line-height: 1.05;
-  font-weight: 900;
+/* FORM */
+.quote-box {
+  background: #fff;
+  color: #000;
+  padding: 25px;
+  width: 320px;
+  border-radius: 6px;
+}
+
+.quote-box h3 {
+  margin-bottom: 15px;
+}
+
+.quote-box input,
+.quote-box select,
+.quote-box textarea {
+  width: 100%;
+  padding: 8px;
   margin-bottom: 12px;
 }
 
-.hero-text .sub{
-  font-size: 15px;
-  line-height: 1.6;
-  opacity: .92;
-  max-width: 540px;
-}
-
-.hero-text .cities{
-  margin-top: 12px;
+.quote-box button {
+  width: 100%;
+  padding: 10px;
+  background: #000;
   color: #c9a44c;
-  font-weight: 900;
+  border: none;
+  cursor: pointer;
 }
 
-/* =======================
-   SECTIONS
-======================= */
-.tagline{
+/* TEXT */
+.hero-text h1 {
+  font-size: 42px;
+  color: #f5e9c6;
+  margin-bottom: 20px;
+}
+
+.location {
+  color: #c9a44c;
+}
+
+/* SECTIONS */
+.tagline {
   text-align: center;
-  padding: 50px 15px;
-  color: #c9a44c;
+  padding: 50px;
   font-size: 22px;
-  font-weight: 900;
+  color: #c9a44c;
 }
 
-.about{
+.about {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
   text-align: center;
-  padding: 40px 15px 55px;
 }
 
-.about p{
-  width: min(820px, 92%);
-  margin: 0 auto;
-  font-size: 18px;
-  line-height: 1.7;
-  color: #2b2b2b;
-}
-
-footer{
+footer {
   background: #000;
   color: #fff;
   text-align: center;
-  padding: 18px 10px;
-  font-size: 14px;
-}
-
-/* =======================
-   RESPONSIVE (MOBILE STACK)
-======================= */
-@media (max-width: 980px){
-  .hero-wrap{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 22px;
-    padding: 30px 0 45px;
-  }
-  .form-panel{
-    width: 100%;
-    max-width: 560px;
-  }
-  .hero-text h1{ font-size: 32px; }
-}
-
-@media (max-width: 520px){
-  .hero-text h1{ font-size: 26px; }
+  padding: 20px;
 }
