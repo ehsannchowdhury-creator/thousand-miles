@@ -28,7 +28,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.5); /* dark overlay for text readability */
+      background: rgba(0, 0, 0, 0.5); /* dark overlay for text readability */
       z-index: 1;
     }
 
@@ -44,7 +44,7 @@
     }
 
     .quote-box {
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.7);
       padding: 20px;
       border-radius: 10px;
       flex: 1;
@@ -79,154 +79,89 @@
       margin-bottom: 10px;
       font-size: 1.1rem;
     }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background: #000;
-      color: white;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-    }
-
-    .navbar a.cta {
-      background: gold;
-      color: black;
-      padding: 5px 15px;
-      border-radius: 5px;
-    }
-
-    .logo small {
-      display: block;
-      font-size: 0.7rem;
-    }
-
-    .notice {
-      background: gold;
-      color: black;
-      text-align: center;
-      padding: 5px 0;
-      font-weight: bold;
-    }
-
-    .tagline, .about, footer {
-      text-align: center;
-      padding: 20px;
-    }
-
-    footer {
-      background: #000;
-      color: white;
-    }
   </style>
 </head>
-
 <body>
 
-<div class="notice">
-  ✨ Executive Chauffeur Services — Florida
-</div>
-
-<header class="navbar">
-  <div class="logo">
-    <span>THOUSAND MILES</span>
-    <small>Executive Chauffeur</small>
+  <div class="notice">
+    ✨ Executive Chauffeur Services — Florida
   </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="pages/services.html">Services</a>
-    <a href="#booking">Book</a>
-    <a href="contact.html">Contact</a> <!-- Fixed path -->
-  </nav>
-
-  <a class="cta" href="#booking">Get Quote</a>
-</header>
-
-<section class="hero" id="booking">
-  <div class="overlay"></div>
-
-  <div class="hero-content">
-
-    <!-- BOOKING FORM -->
-    <form 
-      class="quote-box"
-      action="https://formspree.io/f/mbdlndkb"
-      method="POST">
-
-      <h3>Book a Chauffeur</h3>
-
-      <input type="text" name="name" placeholder="Full Name *" required>
-      <input type="email" name="email" placeholder="Email *" required>
-      <input type="tel" name="phone" placeholder="Phone Number *" required>
-
-      <select name="trip_type" id="tripType" required>
-        <option value="">Trip Type *</option>
-        <option value="One Way">One Way</option>
-        <option value="Round Trip">Round Trip</option>
-        <option value="Hourly">Hourly (As-Directed)</option>
-      </select>
-
-      <input type="text" name="pickup" placeholder="Pickup Address *" required>
-
-      <div id="dropoffWrapper">
-        <input type="text" name="dropoff" placeholder="Drop-off Address *">
-      </div>
-
-      <div id="hourlyWrapper">
-        <input type="number" name="hours" min="2" placeholder="Number of Hours">
-      </div>
-
-      <input type="datetime-local" name="datetime" required>
-
-      <input type="number" name="passengers" min="1" value="1">
-
-      <select name="vehicle">
-        <option>Luxury Sedan</option>
-        <option>SUV</option>
-        <option>Executive Van</option>
-      </select>
-
-      <textarea name="notes" placeholder="Special requests"></textarea>
-
-      <button type="submit">Request Quote</button>
-    </form>
-
-    <!-- HERO TEXT -->
-    <div class="hero-text">
-      <h1>Executive Airport & Private Chauffeur Service</h1>
-      <p>
-        Professional, discreet transportation for executives, airport transfers,
-        hourly service, and long-distance travel across Florida.
-      </p>
-      <p class="location">
-        West Palm Beach • Miami • Orlando • Tampa
-      </p>
+  <header class="navbar">
+    <div class="logo">
+      <span>THOUSAND MILES</span>
+      <small>Executive Chauffeur</small>
     </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pages/services.html">Services</a>
+      <a href="#booking">Book</a>
+      <a href="pages/contact.html">Contact</a>
+    </nav>
+    <a class="cta" href="#booking">Get Quote</a>
+  </header>
 
-  </div>
-</section>
+  <section class="hero" id="booking">
+    <div class="overlay"></div>
+    <div class="hero-content">
 
-<section class="tagline">
-  <h2>Every Ride Reflects Your Standard.</h2>
-</section>
+      <!-- BOOKING FORM -->
+      <form class="quote-box" action="https://formspree.io/f/mbdlndkb" method="POST">
+        <h3>Book a Chauffeur</h3>
+        <input type="text" name="name" placeholder="Full Name *" required>
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="phone" placeholder="Phone Number *" required>
+        <select name="trip_type" id="tripType" required>
+          <option value="">Trip Type *</option>
+          <option value="One Way">One Way</option>
+          <option value="Round Trip">Round Trip</option>
+          <option value="Hourly">Hourly (As-Directed)</option>
+        </select>
+        <input type="text" name="pickup" placeholder="Pickup Address *" required>
+        <div id="dropoffWrapper">
+          <input type="text" name="dropoff" placeholder="Drop-off Address *">
+        </div>
+        <div id="hourlyWrapper">
+          <input type="number" name="hours" min="2" placeholder="Number of Hours">
+        </div>
+        <input type="datetime-local" name="datetime" required>
+        <input type="number" name="passengers" min="1" value="1">
+        <select name="vehicle">
+          <option>Luxury Sedan</option>
+          <option>SUV</option>
+          <option>Executive Van</option>
+        </select>
+        <textarea name="notes" placeholder="Special requests"></textarea>
+        <button type="submit">Request Quote</button>
+      </form>
 
-<section class="about">
-  <p>
-    Thousand Miles provides reliable executive chauffeur services with
-    luxury vehicles, professional drivers, and personalized service.
-  </p>
-</section>
+      <!-- HERO TEXT -->
+      <div class="hero-text">
+        <h1>Executive Airport & Private Chauffeur Service</h1>
+        <p>
+          Professional, discreet transportation for executives, airport transfers,
+          hourly service, and long-distance travel across Florida.
+        </p>
+        <p class="location">West Palm Beach • Miami • Orlando • Tampa</p>
+      </div>
 
-<footer>
-  © 2026 Thousand Miles Chauffeur Services • Florida
-</footer>
+    </div>
+  </section>
+
+  <section class="tagline">
+    <h2>Every Ride Reflects Your Standard.</h2>
+  </section>
+
+  <section class="about">
+    <p>
+      Thousand Miles provides reliable executive chauffeur services with luxury
+      vehicles, professional drivers, and personalized service.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Thousand Miles Chauffeur Services • Florida
+  </footer>
 
 </body>
 </html>
