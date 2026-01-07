@@ -5,15 +5,15 @@
   <title>Thousand Miles | Executive Chauffeur Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
-<!-- TOP NOTICE BAR -->
 <div class="notice">
-  ✨ Executive Chauffeur Services — West Palm Beach, Florida
+  ✨ Executive Chauffeur Services — Florida
 </div>
 
-<!-- NAVBAR -->
 <header class="navbar">
   <div class="logo">
     <span>THOUSAND MILES</span>
@@ -21,69 +21,92 @@
   </div>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Quote / Book</a>
-    <a href="#">Resources</a>
+    <a href="index.html">Home</a>
+    <a href="pages/services.html">Services</a>
+    <a href="#booking">Book</a>
+    <a href="pages/contact.html">Contact</a>
   </nav>
 
-  <a class="cta" href="#">Get My Quote</a>
+  <a class="cta" href="#booking">Get Quote</a>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero">
+<section class="hero" id="booking">
   <div class="overlay"></div>
 
   <div class="hero-content">
 
-    <!-- QUOTE BOX -->
-    <div class="quote-box">
-      <label>Pickup Location *</label>
-      <input type="text" placeholder="Enter pickup address">
+    <!-- BOOKING FORM -->
+    <form 
+      class="quote-box"
+      action="https://formspree.io/f/xxxxabcd"
+      method="POST">
 
-      <label>Drop-off Location *</label>
-      <input type="text" placeholder="Enter drop-off address">
+      <h3>Book a Chauffeur</h3>
 
-      <label>Passengers</label>
-      <input type="number" min="1" value="1">
+      <input type="text" name="name" placeholder="Full Name *" required>
+      <input type="email" name="email" placeholder="Email *" required>
+      <input type="tel" name="phone" placeholder="Phone Number *" required>
 
-      <textarea placeholder="Special request? Anything else?"></textarea>
+      <select name="trip_type" id="tripType" required>
+        <option value="">Trip Type *</option>
+        <option value="One Way">One Way</option>
+        <option value="Round Trip">Round Trip</option>
+        <option value="Hourly">Hourly (As-Directed)</option>
+      </select>
 
-      <button>Request Quote</button>
-    </div>
+      <input type="text" name="pickup" placeholder="Pickup Address *" required>
+
+      <div id="dropoffWrapper">
+        <input type="text" name="dropoff" placeholder="Drop-off Address *">
+      </div>
+
+      <div id="hourlyWrapper">
+        <input type="number" name="hours" min="2" placeholder="Number of Hours">
+      </div>
+
+      <input type="datetime-local" name="datetime" required>
+
+      <input type="number" name="passengers" min="1" value="1">
+
+      <select name="vehicle">
+        <option>Luxury Sedan</option>
+        <option>SUV</option>
+        <option>Executive Van</option>
+      </select>
+
+      <textarea name="notes" placeholder="Special requests"></textarea>
+
+      <button type="submit">Request Quote</button>
+    </form>
 
     <!-- HERO TEXT -->
     <div class="hero-text">
       <h1>Executive Airport & Private Chauffeur Service</h1>
       <p>
-        On-time, private chauffeur transportation for business travelers,
-        executives, and guests — handled with precision from pickup to drop-off.
+        Professional, discreet transportation for executives, airport transfers,
+        hourly service, and long-distance travel across Florida.
       </p>
       <p class="location">
-        West Palm Beach, FL • Serving South & Central Florida
+        West Palm Beach • Miami • Orlando • Tampa
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- TAGLINE -->
 <section class="tagline">
   <h2>Every Ride Reflects Your Standard.</h2>
 </section>
 
-<!-- ABOUT -->
 <section class="about">
   <p>
-    At Thousand Miles, we provide discreet, professional chauffeur services
-    designed for executives, corporate travel, airport transfers, and
-    long-distance luxury transportation across Florida.
+    Thousand Miles provides reliable executive chauffeur services with
+    luxury vehicles, professional drivers, and personalized service.
   </p>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  © 2026 Thousand Miles Chauffeur Services • West Palm Beach, FL
+  © 2026 Thousand Miles Chauffeur Services • Florida
 </footer>
 
 </body>
