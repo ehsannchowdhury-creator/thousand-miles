@@ -4,95 +4,137 @@
   <meta charset="UTF-8" />
   <title>Thousand Miles | Executive Chauffeur Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
 </head>
+
 <body>
 
-  <!-- NOTICE -->
+  <!-- NOTICE BAR -->
   <div class="notice">
     ✨ Executive Chauffeur Services — Florida
   </div>
 
   <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">
-      <span>THOUSAND MILES</span>
-      <small>Executive Chauffeur</small>
+    <div class="container nav-inner">
+      <div class="logo">
+        <span>THOUSAND MILES</span>
+        <small>Executive Chauffeur</small>
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/services.html">Services</a>
+        <a href="#booking">Book</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a class="cta" href="#booking">Get Quote</a>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="pages/services.html">Services</a>
-      <a href="#booking">Book</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a class="cta" href="#booking">Get Quote</a>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="booking">
-    <div class="overlay"></div>
-    <div class="hero-content">
+  <main class="hero" id="booking">
+    <div class="hero-overlay"></div>
 
-      <!-- BOOKING FORM -->
-      <form class="quote-box" action="https://formspree.io/f/mbdlndkb" method="POST">
-        <h3>Book a Chauffeur</h3>
-        <input type="text" name="name" placeholder="Full Name *" required>
-        <input type="email" name="email" placeholder="Email *" required>
-        <input type="tel" name="phone" placeholder="Phone Number *" required>
-        <select name="trip_type" id="tripType" required>
-          <option value="">Trip Type *</option>
-          <option value="One Way">One Way</option>
-          <option value="Round Trip">Round Trip</option>
-          <option value="Hourly">Hourly (As-Directed)</option>
-        </select>
-        <input type="text" name="pickup" placeholder="Pickup Address *" required>
-        <div id="dropoffWrapper">
-          <input type="text" name="dropoff" placeholder="Drop-off Address *">
+    <div class="container hero-grid">
+      <!-- LEFT: BOOKING FORM -->
+      <section class="hero-left">
+        <form class="quote-box" action="https://formspree.io/f/mbdlndkb" method="POST">
+          <h3>Book a Chauffeur</h3>
+
+          <label class="sr-only" for="name">Full Name</label>
+          <input id="name" type="text" name="name" placeholder="Full Name *" required>
+
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="Email *" required>
+
+          <label class="sr-only" for="phone">Phone</label>
+          <input id="phone" type="tel" name="phone" placeholder="Phone Number *" required>
+
+          <label class="sr-only" for="tripType">Trip Type</label>
+          <select name="trip_type" id="tripType" required>
+            <option value="">Trip Type *</option>
+            <option value="One Way">One Way</option>
+            <option value="Round Trip">Round Trip</option>
+            <option value="Hourly">Hourly (As-Directed)</option>
+          </select>
+
+          <label class="sr-only" for="pickup">Pickup Address</label>
+          <input id="pickup" type="text" name="pickup" placeholder="Pickup Address *" required>
+
+          <div id="dropoffWrapper">
+            <label class="sr-only" for="dropoff">Drop-off Address</label>
+            <input id="dropoff" type="text" name="dropoff" placeholder="Drop-off Address *">
+          </div>
+
+          <div id="hourlyWrapper" class="hidden">
+            <label class="sr-only" for="hours">Number of Hours</label>
+            <input id="hours" type="number" name="hours" min="2" placeholder="Number of Hours (min 2)">
+          </div>
+
+          <label class="sr-only" for="datetime">Date & time</label>
+          <input id="datetime" type="datetime-local" name="datetime" required>
+
+          <div class="two-col">
+            <input type="number" name="passengers" min="1" value="1" aria-label="Passengers">
+            <select name="vehicle" aria-label="Vehicle">
+              <option>Luxury Sedan</option>
+              <option>SUV</option>
+              <option>Executive Van</option>
+            </select>
+          </div>
+
+          <textarea name="notes" placeholder="Special requests"></textarea>
+
+          <button type="submit">Request Quote</button>
+        </form>
+      </section>
+
+      <!-- RIGHT: HERO TEXT -->
+      <section class="hero-right">
+        <div class="hero-text">
+          <h1>Executive Airport &amp; Private Chauffeur Service</h1>
+          <p>
+            Professional, discreet transportation for executives, airport transfers,
+            hourly service, and long-distance travel across Florida.
+          </p>
+
+          <p class="location">West Palm Beach • Miami • Orlando • Tampa</p>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="#booking">Book Now</a>
+            <a class="btn-ghost" href="pages/services.html">View Services</a>
+          </div>
         </div>
-        <div id="hourlyWrapper">
-          <input type="number" name="hours" min="2" placeholder="Number of Hours">
-        </div>
-        <input type="datetime-local" name="datetime" required>
-        <input type="number" name="passengers" min="1" value="1">
-        <select name="vehicle">
-          <option>Luxury Sedan</option>
-          <option>SUV</option>
-          <option>Executive Van</option>
-        </select>
-        <textarea name="notes" placeholder="Special requests"></textarea>
-        <button type="submit">Request Quote</button>
-      </form>
-
-      <!-- HERO TEXT -->
-      <div class="hero-text">
-        <h1>Executive Airport & Private Chauffeur Service</h1>
-        <p>
-          Professional, discreet transportation for executives, airport transfers,
-          hourly service, and long-distance travel across Florida.
-        </p>
-        <p class="location">West Palm Beach • Miami • Orlando • Tampa</p>
-      </div>
-
+      </section>
     </div>
-  </section>
+  </main>
 
   <!-- TAGLINE -->
   <section class="tagline">
-    <h2>Every Ride Reflects Your Standard.</h2>
+    <div class="container">
+      <h2>Every Ride Reflects Your Standard.</h2>
+    </div>
   </section>
 
   <!-- ABOUT -->
   <section class="about">
-    <p>
-      Thousand Miles provides reliable executive chauffeur services with luxury
-      vehicles, professional drivers, and personalized service.
-    </p>
+    <div class="container">
+      <p>
+        Thousand Miles provides reliable executive chauffeur services with luxury
+        vehicles, professional drivers, and personalized service.
+      </p>
+    </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    © 2026 Thousand Miles Chauffeur Services • Florida
+    <div class="container">
+      © 2026 Thousand Miles Chauffeur Services • Florida
+    </div>
   </footer>
 
 </body>
