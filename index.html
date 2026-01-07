@@ -1,105 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Thousand Miles | Executive Chauffeur Service</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Thousand Miles | Executive Chauffeur Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 
-<body>
-  <!-- NOTICE -->
-  <div class="notice">✨ Executive Chauffeur Services — Florida</div>
+    <style>
+      /* Full-page hero background */
+      .hero {
+        position: relative;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        background-image: url("assets/hero-background.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="nav-wrap">
-      <div class="brand">
-        <div class="brand-title">THOUSAND MILES</div>
-        <div class="brand-sub">Executive Chauffeur</div>
+      .hero .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* dark overlay for text readability */
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        gap: 50px;
+        max-width: 1200px;
+        width: 100%;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .quote-box {
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .quote-box input,
+      .quote-box select,
+      .quote-box textarea,
+      .quote-box button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      .hero-text {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      .hero-text p {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="notice">
+      ✨ Executive Chauffeur Services — Florida
+    </div>
+
+    <header class="navbar">
+      <div class="logo">
+        <span>THOUSAND MILES</span>
+        <small>Executive Chauffeur</small>
       </div>
 
-      <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
+      <nav>
+        <a href="index.html">Home</a>
         <a href="pages/services.html">Services</a>
         <a href="#booking">Book</a>
         <a href="contact.html">Contact</a>
       </nav>
 
       <a class="cta" href="#booking">Get Quote</a>
-    </div>
-  </header>
+    </header>
 
-  <!-- HERO -->
-  <section class="hero" id="booking">
-    <div class="hero-overlay"></div>
+    <section class="hero" id="booking">
+      <div class="overlay"></div>
 
-    <div class="hero-wrap">
+      <div class="hero-content">
+        <!-- BOOKING FORM -->
+        <form
+          class="quote-box"
+          action="https://formspree.io/f/mbdlndkb"
+          method="POST"
+        >
+          <h3>Book a Chauffeur</h3>
 
-      <!-- LEFT: DARK GLASS FORM PANEL (LIKE YOUR PHOTO) -->
-      <form class="form-panel" action="https://formspree.io/f/mbdlndkb" method="POST">
-        <input type="text" name="name" placeholder="Full Name *" required />
-        <input type="email" name="email" placeholder="Email *" required />
-        <input type="tel" name="phone" placeholder="Phone Number *" required />
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name *"
+            required
+          />
 
-        <select name="trip_type" id="tripType" required>
-          <option value="">Trip Type *</option>
-          <option value="One Way">One Way</option>
-          <option value="Round Trip">Round Trip</option>
-          <option value="Hourly">Hourly (As-Directed)</option>
-        </select>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email *"
+            required
+          />
 
-        <input type="text" name="pickup" placeholder="Pickup Address *" required />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Phone Number *"
+            required
+          />
 
-        <div id="dropoffWrapper">
-          <input id="dropoff" type="text" name="dropoff" placeholder="Drop-off Address *" />
+          <select name="trip_type" id="tripType" required>
+            <option value="">Trip Type *</option>
+            <option value="One Way">One Way</option>
+            <option value="Round Trip">Round Trip</option>
+            <option value="Hourly">Hourly (As-Directed)</option>
+          </select>
+
+          <input
+            type="text"
+            name="pickup"
+            placeholder="Pickup Address *"
+            required
+          />
+
+          <div id="dropoffWrapper">
+            <input
+              type="text"
+              name="dropoff"
+              placeholder="Drop-off Address *"
+            />
+          </div>
+
+          <div id="hourlyWrapper">
+            <input
+              type="number"
+              name="hours"
+              min="2"
+              placeholder="Number of Hours"
+            />
+          </div>
+
+          <input type="datetime-local" name="datetime" required />
+
+          <input
+            type="number"
+            name="passengers"
+            min="1"
+            value="1"
+          />
+
+          <select name="vehicle">
+            <option>Luxury Sedan</option>
+            <option>SUV</option>
+            <option>Executive Van</option>
+          </select>
+
+          <textarea
+            name="notes"
+            placeholder="Special requests"
+          ></textarea>
+
+          <button type="submit">Request Quote</button>
+        </form>
+
+        <!-- HERO TEXT -->
+        <div class="hero-text">
+          <h1>Executive Airport & Private Chauffeur Service</h1>
+
+          <p>
+            Professional, discreet transportation for executives, airport
+            transfers, hourly service, and long-distance travel across Florida.
+          </p>
+
+          <p class="location">
+            West Palm Beach • Miami • Orlando • Tampa
+          </p>
         </div>
-
-        <div id="hourlyWrapper" class="hidden">
-          <input id="hours" type="number" name="hours" min="2" placeholder="Number of Hours (min 2)" />
-        </div>
-
-        <input type="datetime-local" name="datetime" required />
-        <input type="number" name="passengers" min="1" value="1" />
-
-        <select name="vehicle">
-          <option>Luxury Sedan</option>
-          <option>SUV</option>
-          <option>Executive Van</option>
-        </select>
-
-        <textarea name="notes" placeholder="Special requests"></textarea>
-
-        <button type="submit">Request Quote</button>
-      </form>
-
-      <!-- RIGHT: HERO TEXT -->
-      <div class="hero-text">
-        <h1>Executive Airport &amp; Private Chauffeur Service</h1>
-        <p class="sub">
-          Professional, discreet transportation for executives, airport transfers,
-          hourly service, and long-distance travel across Florida.
-        </p>
-        <p class="cities">West Palm Beach • Miami • Orlando • Tampa</p>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="tagline">
+      <h2>Every Ride Reflects Your Standard.</h2>
+    </section>
 
-  <!-- TAGLINE -->
-  <section class="tagline">
-    <h2>Every Ride Reflects Your Standard.</h2>
-  </section>
+    <section class="about">
+      <p>
+        Thousand Miles provides reliable executive chauffeur services with luxury
+        vehicles, professional drivers, and personalized service.
+      </p>
+    </section>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <p>
-      Thousand Miles provides reliable executive chauffeur services with luxury vehicles,
-      professional drivers, and personalized service.
-    </p>
-  </section>
-
-  <footer>© 2026 Thousand Miles Chauffeur Services • Florida</footer>
-</body>
+    <footer>
+      © 2026 Thousand Miles Chauffeur Services • Florida
+    </footer>
+  </body>
 </html>
