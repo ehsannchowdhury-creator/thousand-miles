@@ -64,9 +64,10 @@ nav a {
 /* HERO */
 .hero {
   position: relative;
-  height: 90vh;
-  background: url("https://images.unsplash.com/photo-1617814071447-4f0c6b6b4f58")
-    center/cover no-repeat;
+  width: 100%;
+  min-height: 90vh; /* mobile-friendly */
+  background: url("https://images.unsplash.com/photo-1617814071447-4f0c6b6b4f58") center/cover no-repeat;
+  background-attachment: scroll;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,7 +157,9 @@ footer {
   padding: 20px;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE MEDIA QUERIES */
+
+/* Tablets */
 @media screen and (max-width: 1024px) {
   .hero-content {
     padding: 30px;
@@ -173,6 +176,7 @@ footer {
   }
 }
 
+/* Mobile */
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -193,8 +197,14 @@ footer {
   .hero-text {
     text-align: center;
   }
+
+  /* Optional: smaller hero image for mobile */
+  .hero {
+    background: url("assets/hero-background-mobile.png") center/cover no-repeat;
+  }
 }
 
+/* Small phones */
 @media screen and (max-width: 480px) {
   .hero-text h1 {
     font-size: 1.5rem;
