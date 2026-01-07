@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
 body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
   background: #f6f3ec;
   color: #111;
 }
@@ -27,7 +27,7 @@ body {
   align-items: center;
   gap: 16px;
   padding: 20px 40px;
-  flex-wrap: wrap; /* lets it behave on smaller screens */
+  flex-wrap: wrap;
 }
 
 .logo span {
@@ -62,11 +62,12 @@ nav a {
   white-space: nowrap;
 }
 
-/* HERO (keeps your original look) */
+/* HERO */
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh;     /* FIX */
+  height: auto;         /* FIX */
   background-image: url("assets/hero-background.png");
   background-size: cover;
   background-position: center;
@@ -93,7 +94,6 @@ nav a {
   width: 100%;
   padding: 20px;
   flex-wrap: wrap;
-  align-items: stretch;
 }
 
 /* FORM */
@@ -171,22 +171,32 @@ footer {
   padding: 20px;
 }
 
-/* ==============================
-   RESPONSIVE (Mobile / Tablet)
-============================== */
-
+/* RESPONSIVE FIXES */
 @media (max-width: 1024px) {
   .navbar { padding: 16px 20px; }
-  .hero-content { gap: 28px; padding: 20px; }
+  .hero-content { gap: 28px; }
   .hero-text h1 { font-size: 2.1rem; }
 }
 
 @media (max-width: 768px) {
-  .navbar { padding: 14px 14px; }
-  nav a { margin: 0; }
-  .hero-content { flex-direction: column; gap: 18px; }
-  .quote-box { min-width: 0; }
-  .hero-text { min-width: 0; }
+  .navbar { padding: 14px; }
+
+  .hero {
+    min-height: 100svh;     /* mobile viewport fix */
+    padding: 40px 0;        /* prevents overlap */
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .quote-box,
+  .hero-text {
+    min-width: 0;
+  }
+
   .tagline { padding: 40px 18px; }
   .about { padding: 28px 18px; }
 }
