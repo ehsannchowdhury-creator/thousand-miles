@@ -6,81 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-
-    <style>
-      /* Full-page hero background */
-      .hero {
-        position: relative;
-        width: 100%;
-        height: 100vh; /* Full viewport height */
-        background-image: url("assets/hero-background.png");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-      }
-
-      .hero .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* dark overlay for text readability */
-        z-index: 1;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        gap: 50px;
-        max-width: 1200px;
-        width: 100%;
-        padding: 20px;
-        flex-wrap: wrap;
-      }
-
-      .quote-box {
-        background: rgba(0, 0, 0, 0.7);
-        padding: 20px;
-        border-radius: 10px;
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .quote-box input,
-      .quote-box select,
-      .quote-box textarea,
-      .quote-box button {
-        width: 100%;
-        margin-bottom: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-      }
-
-      .hero-text {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .hero-text h1 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-      }
-
-      .hero-text p {
-        margin-bottom: 10px;
-        font-size: 1.1rem;
-      }
-    </style>
   </head>
 
   <body>
@@ -116,26 +41,9 @@
         >
           <h3>Book a Chauffeur</h3>
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name *"
-            required
-          />
-
-          <input
-            type="email"
-            name="email"
-            placeholder="Email *"
-            required
-          />
-
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number *"
-            required
-          />
+          <input type="text" name="name" placeholder="Full Name *" required />
+          <input type="email" name="email" placeholder="Email *" required />
+          <input type="tel" name="phone" placeholder="Phone Number *" required />
 
           <select name="trip_type" id="tripType" required>
             <option value="">Trip Type *</option>
@@ -144,38 +52,18 @@
             <option value="Hourly">Hourly (As-Directed)</option>
           </select>
 
-          <input
-            type="text"
-            name="pickup"
-            placeholder="Pickup Address *"
-            required
-          />
+          <input type="text" name="pickup" placeholder="Pickup Address *" required />
 
           <div id="dropoffWrapper">
-            <input
-              type="text"
-              name="dropoff"
-              placeholder="Drop-off Address *"
-            />
+            <input type="text" name="dropoff" placeholder="Drop-off Address *" />
           </div>
 
           <div id="hourlyWrapper">
-            <input
-              type="number"
-              name="hours"
-              min="2"
-              placeholder="Number of Hours"
-            />
+            <input type="number" name="hours" min="2" placeholder="Number of Hours" />
           </div>
 
           <input type="datetime-local" name="datetime" required />
-
-          <input
-            type="number"
-            name="passengers"
-            min="1"
-            value="1"
-          />
+          <input type="number" name="passengers" min="1" value="1" />
 
           <select name="vehicle">
             <option>Luxury Sedan</option>
@@ -183,10 +71,7 @@
             <option>Executive Van</option>
           </select>
 
-          <textarea
-            name="notes"
-            placeholder="Special requests"
-          ></textarea>
+          <textarea name="notes" placeholder="Special requests"></textarea>
 
           <button type="submit">Request Quote</button>
         </form>
