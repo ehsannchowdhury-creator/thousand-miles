@@ -1,129 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background: #f6f3ec;
+  color: #111;
+}
+
+/* NOTICE */
+.notice {
+  background: #f5e9c6;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 40px;
+  flex-wrap: wrap; /* lets it behave on smaller screens */
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo small {
+  display: block;
+  font-size: 12px;
+  color: #c9a44c;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 12px;
+}
+
+.cta {
+  border: 1px solid #c9a44c;
+  padding: 8px 16px;
+  color: #c9a44c;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* HERO (keeps your original look) */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("assets/hero-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 50px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* FORM */
+.quote-box {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.quote-box h3 {
+  margin-bottom: 15px;
+}
+
+.quote-box input,
+.quote-box select,
+.quote-box textarea,
+.quote-box button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.quote-box button {
+  background: #000;
+  color: #c9a44c;
+  cursor: pointer;
+}
+
+/* HERO TEXT */
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.location {
+  color: #c9a44c;
+}
+
+/* SECTIONS */
+.tagline {
+  text-align: center;
+  padding: 50px;
+  font-size: 22px;
+  color: #c9a44c;
+}
+
+.about {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+}
+
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
 /* ==============================
    RESPONSIVE (Mobile / Tablet)
-   Keep same design, just adapt
 ============================== */
 
-/* Make hero content wrap nicely already, but control spacing on smaller screens */
 @media (max-width: 1024px) {
-  .navbar {
-    padding: 16px 20px;
-  }
-
-  .hero-content {
-    padding: 60px 28px;
-    gap: 28px;
-  }
-
-  .hero-text h1 {
-    font-size: 36px;
-  }
+  .navbar { padding: 16px 20px; }
+  .hero-content { gap: 28px; padding: 20px; }
+  .hero-text h1 { font-size: 2.1rem; }
 }
 
-/* Tablet + large phones */
 @media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  /* keep nav visible but allow wrapping */
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  nav a {
-    margin: 0;
-  }
-
-  .cta {
-    margin-left: auto;
-  }
-
-  .hero {
-    height: auto;            /* allow content to define height */
-    min-height: 100vh;       /* still feels like full hero */
-  }
-
-  .hero-content {
-    flex-direction: column;  /* form on top, text below */
-    padding: 40px 18px;
-  }
-
-  .quote-box {
-    width: 100%;
-    max-width: 520px;        /* keeps same look, not too wide */
-  }
-
-  .hero-text h1 {
-    font-size: 34px;
-  }
-
-  .tagline {
-    padding: 40px 18px;
-  }
-
-  .about {
-    padding: 28px 18px;
-  }
+  .navbar { padding: 14px 14px; }
+  nav a { margin: 0; }
+  .hero-content { flex-direction: column; gap: 18px; }
+  .quote-box { min-width: 0; }
+  .hero-text { min-width: 0; }
+  .tagline { padding: 40px 18px; }
+  .about { padding: 28px 18px; }
 }
 
-/* Small phones */
 @media (max-width: 480px) {
-  .notice {
-    font-size: 13px;
-    padding: 8px 10px;
-  }
-
-  .navbar {
-    padding: 14px 14px;
-  }
-
-  .logo span {
-    font-size: 18px;
-  }
-
-  .hero-content {
-    padding: 28px 14px;
-    gap: 18px;
-  }
-
-  .quote-box {
-    padding: 18px;
-    border-radius: 6px; /* same style */
-  }
-
-  .quote-box input,
-  .quote-box select,
-  .quote-box textarea,
-  .quote-box button {
-    padding: 10px; /* easier tapping */
-  }
-
-  .hero-text h1 {
-    font-size: 28px;
-    line-height: 1.15;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  footer {
-    padding: 18px 12px;
-    font-size: 14px;
-  }
-}
-
-/* Make datetime/passengers inputs not overflow on iOS */
-input,
-select,
-textarea {
-  max-width: 100%;
-}
-
-/* Optional: slightly better form spacing on narrow screens */
-.quote-box textarea {
-  min-height: 90px;
+  .notice { font-size: 13px; }
+  .logo span { font-size: 18px; }
+  .hero-text h1 { font-size: 1.8rem; line-height: 1.15; }
+  .hero-text p { font-size: 1rem; }
+  footer { font-size: 14px; }
 }
