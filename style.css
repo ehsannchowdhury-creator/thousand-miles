@@ -65,9 +65,11 @@ nav a {
 .hero {
   position: relative;
   width: 100%;
-  min-height: 90vh; /* mobile-friendly */
-  background: url("https://images.unsplash.com/photo-1617814071447-4f0c6b6b4f58") center/cover no-repeat;
-  background-attachment: scroll;
+  min-height: 90vh; /* ensures hero shows on mobile */
+  background-image: url('assets/hero-background.png'); /* your actual image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,11 +198,6 @@ footer {
 
   .hero-text {
     text-align: center;
-  }
-
-  /* Optional: smaller hero image for mobile */
-  .hero {
-    background: url("assets/hero-background-mobile.png") center/cover no-repeat;
   }
 }
 
