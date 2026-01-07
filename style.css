@@ -1,3 +1,4 @@
+/* RESET & BASE */
 * {
   margin: 0;
   padding: 0;
@@ -23,8 +24,10 @@ body {
   background: #000;
   color: #fff;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px 40px;
+  align-items: center;
+  padding: 15px 20px;
 }
 
 .logo span {
@@ -38,9 +41,15 @@ body {
   color: #c9a44c;
 }
 
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0;
+}
+
 nav a {
   color: #fff;
-  margin: 0 12px;
   text-decoration: none;
 }
 
@@ -49,6 +58,7 @@ nav a {
   padding: 8px 16px;
   color: #c9a44c;
   text-decoration: none;
+  margin-left: auto;
 }
 
 /* HERO */
@@ -57,6 +67,9 @@ nav a {
   height: 90vh;
   background: url("https://images.unsplash.com/photo-1617814071447-4f0c6b6b4f58")
     center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay {
@@ -69,8 +82,10 @@ nav a {
   position: relative;
   display: flex;
   gap: 40px;
-  padding: 80px;
+  padding: 40px;
   color: #fff;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* FORM */
@@ -80,6 +95,7 @@ nav a {
   padding: 25px;
   width: 320px;
   border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .quote-box h3 {
@@ -103,9 +119,13 @@ nav a {
   cursor: pointer;
 }
 
-/* TEXT */
+/* HERO TEXT */
+.hero-text {
+  max-width: 500px;
+}
+
 .hero-text h1 {
-  font-size: 42px;
+  font-size: 2.5rem;
   color: #f5e9c6;
   margin-bottom: 20px;
 }
@@ -117,7 +137,7 @@ nav a {
 /* SECTIONS */
 .tagline {
   text-align: center;
-  padding: 50px;
+  padding: 50px 20px;
   font-size: 22px;
   color: #c9a44c;
 }
@@ -125,7 +145,7 @@ nav a {
 .about {
   max-width: 800px;
   margin: auto;
-  padding: 40px;
+  padding: 40px 20px;
   text-align: center;
 }
 
@@ -134,4 +154,62 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 1024px) {
+  .hero-content {
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .quote-box {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin: 10px 0;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 18px;
+    padding: 30px 10px;
+  }
+
+  .about {
+    padding: 30px 10px;
+  }
+
+  .cta {
+    margin-top: 10px;
+  }
 }
